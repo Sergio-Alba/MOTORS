@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div>
-      <Header/>
+      <Header logo ="Sobre Ruedas"/>
     </div>
   )
 }

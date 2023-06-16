@@ -4,5 +4,23 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #c59494;
+  background-color: var(--color-bg);
+  color: var(--color-text-1);
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none ;
+
+}
+
+:root{
+  --color-bg:#220033;
+  --color-bg-2:#5f008f;
+  --color-bg-3:#35004f;
+  --color-bg-4:#8a00cf;
+  --color-bg-5:#2c0042;
+  --color-text-1:#e9c4fb;
+  --color-text-2:#7a5394;
 }

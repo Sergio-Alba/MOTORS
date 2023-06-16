@@ -1,10 +1,12 @@
-// import React from "react"; 
+/* eslink disble react/no-unescaped-entities */
+import React from "react"; 
 import './style.css';
 
-const Header = ()=>{
+
+const Header = ({ logo , menuItem})=>{
     return(
-        <Header className="header">
-            <a href="/" className="logo">Sa´c</a>
+        <header className="header">
+            <a href="/" className="logo">{logo}</a>
             <input type="checkbox" className="side-menu " id="side-menu"/>
             <label htmlFor="side-menu" className="hamb">
                 <span className="hamb-line"></span>
@@ -17,9 +19,9 @@ const Header = ()=>{
                     <li><a href="#">contacto</a></li>
                 </ul>
             </nav>
-        </Header>
+        </header>
     )
-}
+};
 
 
 export default Header;
