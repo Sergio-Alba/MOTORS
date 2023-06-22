@@ -12,15 +12,15 @@ ul{
 }
 a{
   text-decoration: none ;
-
+  color: var(--color-text-1);
 }
 
 :root{
-  --color-bg:#220033;
-  --color-bg-2:#5f008f;
-  --color-bg-3:#35004f;
-  --color-bg-4:#8a00cf;
-  --color-bg-5:#2c0042;
-  --color-text-1:#e9c4fb;
-  --color-text-2:#7a5394;
+  --color-bg:#0b011f;
+  --color-bg-2:#180340;
+  --color-bg-3:#2c057a;
+  --color-bg-4:#1a0650;
+  --color-bg-5:#4416c1;
+  --color-text-2:#a28fff;
+  --color-text-1:#ded6ff;
 }
