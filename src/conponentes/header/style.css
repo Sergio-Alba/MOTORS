@@ -3,15 +3,18 @@
     background-color:var(--color-bg-2);
     position: sticky;
     height:5rem;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    z-index: 20;
+    z-index: 1;
 }
 .logo{
-    margin: .8rem 0 0 .8rem;
+    margin-left: 2rem;
     display: inline-block;
-    width: 70%;
+    width: 40%;
     font-size: 2rem;
     color: var(--color-text-1);
 }
@@ -21,10 +24,9 @@
 .side-menu:checked ~ nav{
     max-height: 60vh;
 }
-.hamb{
+.hamb{  
     height: 30px;
     width: 5rem;
-    margin: 1.5rem .8rem 0 0;
     cursor: pointer;
 }
 .hamb span{
@@ -60,7 +62,7 @@
     overflow: hidden;
     max-height: 0;
     transition: max-height .5s ease-out;
-    z-index: 10;
+    z-index: 5;
 }
 .menu a{
     display: block;
@@ -73,64 +75,6 @@
 }
 
 
-/** section cart , fav y login */
-.section-cart{
-    height: auto;
-    width: auto;
-    position: fixed;
-    right: 0;
-    top: 5rem;
-    text-align: center;
-    display: flex;
-}
-.open-carts{
-    display:none ;
-}
-.open-carts:checked ~ .menu-cart{
-    max-width: 4rem;
-}
-.open-carts:checked ~ .btn-cart i{
-    display: block;    
-    transform: rotate(180deg);
-    transition: transform 300ms ease-in-out;
-}
-.btn-cart {
-    width:2.5rem;
-    height: 2.5rem;
-    margin:0 .5rem;
-    background-color:var(--color-bg-3) ;
-    border: none;
-    border-radius: 20px;
-    font-size: 2rem;
-    color: var(--color-text-1);
-}
-.menu-cart{
-    background-color:var(--color-bg-5);
-    height: 100%;
-    width: 4rem;
-    max-width: 0;
-    overflow: hidden;
-    transition: max-width 500ms ease-out;
-    cursor: pointer;
-}
-.item-cart{
-    border: none;
-    color: var(--color-text-4);
-    background: none;
-    font-size: 2rem;
-    padding: .3rem;
-}
-.item-cart span{
-    display: block;
-    position: relative ;
-    background-color:var(--color-bg-2);
-    border-radius: 50px;
-    height:1.4rem;
-    width:1.4rem;
-    font-size: 1rem;
-    right: -1.4rem;
-    bottom: 2.7rem;
-}
 
 
 /** media query*/
@@ -167,57 +111,5 @@
     }
     .menu a:hover{
         background-color: var(--color-bg-3);
-    }
-    
-    /** section cart , fav y login */
-    .section-cart{
-        height: 3rem;
-        width: 16rem;
-        position:absolute;
-        right: 0;
-        top:7rem;
-        text-align: center;
-    }
-    .open-carts{
-        display:none ;
-    }
-    .open-carts:checked ~ .menu-cart{
-        max-width: none;
-    }
-    .btn-cart {
-        display: none;
-    }
-    .menu-cart{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        max-width: none;
-    }
-    .item-cart{
-        border: none;
-        color: var(--color-text-4);
-        background: none;
-        font-size: 1.5rem;
-        padding: .3rem;
-    }
-    .item-cart:active{
-        background-color: var(--color-bg-2);
-    }
-    .item-cart a  {
-        padding-bottom: 1rem;
-    }
-    .item-cart span{
-        display: inline-block;
-        position: relative;
-        background-color:var(--color-bg-2);
-        border-radius: 50px;
-        height:1.3rem;
-        width:1.3rem;
-        font-size: .8rem;
-        right: .5rem;
-        top:.5rem;
-        z-index: 20;
-        
     }
 }

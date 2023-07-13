@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
 import React, { useState } from "react"; 
 import './style.css';
@@ -21,35 +23,9 @@ const Header = ({ logo , menuItem})=>{
                     <li><a href="#">contacto</a></li>
                 </ul>
             </nav>
-            <Cart/>
         </header>
     )
 };
-
-const Cart = ()=>{
-
-    const [p, setProd]= useState(0)
-    const [ f , setFav] = useState(0)
-    return(
-        <section className="section-cart">
-            <input type="checkbox" className="open-carts" id="open-carts" />
-            <label htmlFor="open-carts" className="btn-cart">
-                <i className="bi bi-caret-left"></i>
-            </label>
-            <ul className="menu-cart">
-                <button className="item-cart" onClick={()=> setProd((p)=>p + 1)}>
-                    <i className="bi bi-cart"></i>
-                    <span>{p}</span>
-                </button>
-                <button className="item-cart" onClick={()=> setFav((f)=>f + 1)}>
-                    <i className="bi bi-star"></i>
-                    <span>{f}</span>
-                </button>
-                <li className="item-cart"> <a href="#" ><i className="bi bi-person"></i></a></li>
-            </ul>
-        </section>
-    )
-}
 
 
 

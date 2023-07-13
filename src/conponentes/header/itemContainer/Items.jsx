@@ -1,13 +1,13 @@
-
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from "react"
-import './style.css'
+import './style'
 
 
-const ItemListContainer = ({greeting, descripcion})=>{
+const ItemListContainer = (greeting)=>{
     return(
         <main className="main-container">
             <h1 className="main-title">{greeting}</h1>
-            <p className="main-descripcion">{descripcion}</p>
         </main>
     )
 };

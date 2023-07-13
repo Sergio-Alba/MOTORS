@@ -1,13 +1,20 @@
-import './App.css'
-import Header from './conponentes/header'
-import ItemListContainer from "./conponentes/itemContainer/Items"
+/* eslint-disable react/jsx-key */
+import './App.css';
+import Header from './conponentes/header';
+import Cart from './conponentes/search-fav-card/cart-fav';
+import {Route, Routes} from 'react-router-dom';
+import Home from './page/home';
+import ProductDetail from './page/product-detail';
 
 function App() {
-
   return (
     <div>
       <Header logo ="MOTORS"/>
-      <ItemListContainer greeting="¡Bienvenido a Motors" descripcion="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum iusto quos molestiae illum fuga numquam, corrupti possimus tempore?"/>
+      <Cart/>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/products/:productId' element={<ProductDetail/>}></Route>
+        </Routes>
     </div>
   )
 }
