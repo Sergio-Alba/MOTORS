@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
-import React, { useState } from "react"; 
 import './style.css';
+import React, { useState } from "react"; 
+import {Link} from 'react-router-dom';
 
 
 const Header = ({ logo , menuItem})=>{
@@ -17,10 +17,10 @@ const Header = ({ logo , menuItem})=>{
             </label>
             <nav className="nav">
                 <ul className="menu">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">contacto</a></li>
+                    <li> <Link  to="/">Inicio</Link> </li>
+                    <li><Link  to="/products/">Productos</Link></li>
+                    <li><Link  to="/about">Sobre Nosotros</Link></li>
+                    <li><Link  to="/contact">Contacto</Link></li>
                 </ul>
             </nav>
         </header>

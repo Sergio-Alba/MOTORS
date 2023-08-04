@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+
 import React from "react";
 import './style.css';
 
@@ -15,9 +16,8 @@ const Search = ({id,
                     })=>{
     return(
         <section className="search">
-            <label 
-                htmlFor={id}>
-                    {name}
+            <label htmlFor={id}>
+                {name}
             </label>
             <input 
                 id={id}

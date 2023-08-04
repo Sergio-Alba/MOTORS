@@ -1,0 +1,42 @@
+.slider{
+  height: 4rem;
+  width: 100vw;
+  padding: 0 .5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slider-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  align-items: center; 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+.btn-slider{
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  font-size: 1rem;
+  font-weight:900;
+  background-color:var(--color-bg-2);
+  cursor: pointer;
+  border: none;
+}
+.previus-btn{
+  left: .5rem;
+}
+.next-btn{
+  right:.5rem;
+}
+.btn-slider:hover{
+  background-color: var(--color-bg);
+  border: 1px solid #000; 
+
+}

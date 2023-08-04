@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import './style.css'
 
-const Card = ({id, image, name, category, description, price, stock, onShowDetails})=>{
+const Card = ({id, image, name, category, description, price, stock,onAddToCart, onShowDetails})=>{
     return(
         <div className="container-card">
           <div key={id} className='card' onClick={() => onShowDetails(id)}>
@@ -15,7 +15,7 @@ const Card = ({id, image, name, category, description, price, stock, onShowDetai
             </div>
           </div>
           <div className="card-contain-btn">
-            <button className='card-btn'> add to card </button>
+            <button className='card-btn'onClick={()=>onAddToCart(id)}> add to card </button>
           </div>
           
         </div>

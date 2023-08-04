@@ -24,3 +24,12 @@ a{
   --color-text-2:#a28fff;
   --color-text-1:#ded6ff;
 }
+:root{
+  --color-bg:#fae6e6;
+  --color-bg-2:#fff1f1;
+  --color-bg-3:#dbdbdb;
+  --color-bg-4:#f3f3f3;
+  --color-bg-5:#c6c6c6;
+  --color-text-2:#030202;
+  --color-text-1:#0d0a1a;
+}
