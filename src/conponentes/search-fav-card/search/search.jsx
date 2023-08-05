@@ -4,7 +4,7 @@
 import React from "react";
 import './style.css';
 
-const Search = ({id,
+const Input = ({id,
                 type = Text,
                 placeholder,
                 required,
@@ -35,4 +35,4 @@ const Search = ({id,
     )
 }
 
-export default Search;
+export default Input;

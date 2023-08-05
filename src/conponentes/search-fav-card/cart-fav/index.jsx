@@ -1,25 +1,28 @@
 /* eslint-disable no-unused-vars */
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import './style.css'
+import { CartContext } from "../../context/cart-context";
+import {  useNavigate } from "react-router-dom";
 
 
 const CartFavLogin = ()=>{
-
-    const [p, setProd]= useState(0)
-    const [ f , setFav] = useState(0)
-
+    const {cart}= useContext(CartContext);
+    const navigate = useNavigate()
+    const goToCart = ()=>{
+        navigate('/cart');
+    }
 
     return(
         <div className="contain-card-fav">
             <div className="div-cart">
                 <ul className="menu-cart">
-                    <button className="item-cart" onClick={()=> setProd((p)=>p + 1)}>
+                    <button className="item-cart" onClick={goToCart}>
                         <i className="bi bi-cart"></i>
-                        <span>{p}</span>
+                        <span>{cart.length}</span>
                     </button>
-                    <button className="item-cart" onClick={()=> setFav((f)=>f + 1)}>
+                    <button className="item-cart" >
                         <i className="bi bi-star"></i>
-                        <span>{f}</span>
+                        <span>0</span>
                     </button>
                     <button className="item-cart">
                         <a href="#" ><i className="bi bi-person"></i></a>

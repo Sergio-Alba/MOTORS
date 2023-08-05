@@ -47,22 +47,25 @@
     font-size: .8rem;
 }
 .card-contain-btn{
-    
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
+
 .card-btn{
-    border: none;
-    padding: .58rem;
+    width: 3rem;
+    height: 3rem;
+    border:none;
+    font-size: 2rem;
+    background: none;
+    color: #fff;
+}
+.btn-fav:checked{
+    color: black;
+    background-color: #fff;
 }
 .card-btn:hover{
     background-color: var(--color-text-2);
 }
 
-@media screen and (min-width:1200px) {
-    .container-card{
-        height: 50vh;
-    }
-    .container-card:hover{
-        transform: scale(1.03);
-        border: solid 1px var(--color-text-2);
-    }
-}
+
