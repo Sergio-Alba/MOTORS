@@ -11,6 +11,7 @@ import { CartProvider } from './conponentes/context/cart-context';
 import Cart from './page/cart';
 import CartFavLogin from './conponentes/search-fav-card/cart-fav';
 import Checkout from './page/checkout';
+import Fav from './page/fav';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/products' element={<Product/>}/>
             <Route path='/products/:productId' element={<ProductDetail/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
+            <Route path='/fav' element={<Fav/>}></Route>
             <Route path='/about' element={<About/>}></Route>
             <Route path='/contact' element={<Contact/>}></Route>
             <Route path='/checkout' element={<Checkout/>}></Route>

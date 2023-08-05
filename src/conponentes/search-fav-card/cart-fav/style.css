@@ -12,7 +12,7 @@
     height: 100%;
     width: 50%;
     /* border: 1px solid #fff ; */
-    background-color: #ffffff27;
+    background-color: #00000027;
     backdrop-filter: blur(15px);
     box-shadow: 0 0 0 1px rgb(217, 207, 216);
 }
@@ -41,7 +41,7 @@
     font-weight: 800;
 }
 .item-cart:active{
-    color: rgb(14, 2, 39);
+    color: rgb(171, 132, 255);
 }
 .item-cart ul {
     height: 3rem;

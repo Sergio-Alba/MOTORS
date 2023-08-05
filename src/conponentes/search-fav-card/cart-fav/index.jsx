@@ -11,6 +11,10 @@ const CartFavLogin = ()=>{
     const goToCart = ()=>{
         navigate('/cart');
     }
+    
+    const goTofav = ()=>{
+        navigate('/fav');
+    }
 
     return(
         <div className="contain-card-fav">
@@ -20,12 +24,12 @@ const CartFavLogin = ()=>{
                         <i className="bi bi-cart"></i>
                         <span>{cart.length}</span>
                     </button>
-                    <button className="item-cart" >
+                    <button className="item-cart" onClick={goTofav}> 
                         <i className="bi bi-star"></i>
                         <span>0</span>
                     </button>
                     <button className="item-cart">
-                        <a href="#" ><i className="bi bi-person"></i></a>
+                        <i className="bi bi-person"></i>
                     </button>
                 </ul>
             </div>

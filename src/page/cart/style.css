@@ -166,7 +166,8 @@
   background-color: #150c3d;
   color: #fff;
   border:1px solid #fff;
-}.cart-checkout:hover{
+}
+.cart-checkout:hover{
   font-size: 1.2rem;
   background-color: #664cdc;
   color: #fff;

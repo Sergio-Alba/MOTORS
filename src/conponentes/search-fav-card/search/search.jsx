@@ -9,28 +9,34 @@ const Input = ({id,
                 placeholder,
                 required,
                 name,
+                label,
                 onChange,
                 onFocus,
                 onBlur,
-                value
+                value,
+                active,
+                error,
+                hasError,
                     })=>{
     return(
         <section className="search">
             <label htmlFor={id}>
-                {name}
+                {label}
             </label>
             <input 
                 id={id}
                 type={type}
                 placeholder={placeholder}
                 required={required}
-                name
+                name={name}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onChange={onChange}
                 value={value}
             />
-            
+            {hasError && (
+                <span className="input-error">{error}</span>
+            )}
         </section>
     )
 }
