@@ -2,13 +2,28 @@ import { useContext } from 'react';
 import './style.css';
 import { CartContext } from '../../conponentes/context/cart-context';
 import { useNavigate } from 'react-router-dom';
+import { firebaseServices } from '../../services/firebase';
 
 
 const Cart = ()=>{
   const navigate = useNavigate()
   const{ cart, onAddToCart,onDecreaseItem,onRemoveItem,total,getTotalItemQuantity}=useContext(CartContext)
-  const onHandleCheckout = ()=>{
-    navigate('/checkout')
+  const onHandlerCreateCart = async()=>{
+    const newCart ={
+      buyer: {
+        id:1,
+      },
+      createdAt:new Date(),
+      total:total,
+      status:'Pending',
+    }
+    const cartId = await firebaseServices.createCart(newCart)
+
+    return cartId
+  }
+  const onHandleCheckout = async()=>{
+    const cartId = await onHandlerCreateCart()
+    navigate('/checkout',{state: {cartId}})
   }
   return(
     <div className="cart-container" >

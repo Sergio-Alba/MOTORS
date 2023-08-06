@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
 
 import Input from '../../conponentes/search-fav-card/search/search';
 import './style.css';
 import { useForm } from '../../hooks/useForm';
+import { useContext, useEffect } from 'react';
+import { CartContext } from '../../conponentes/context/cart-context';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { firebaseServices } from '../../services/firebase';
+import { useQuery } from '../../hooks/useQuery';
 
 
 const initialState = {
@@ -16,26 +22,92 @@ const initialState = {
 }
 
 function Checkout  (){
-  const [formState, inputHandler,clearInputs, inputFocus,inputBlur] = useForm(initialState);
+    const {cart, total, setCart, onAddToCart, onDecreaseItem, onRemoveItem, getTotalItemQuantity} = useContext(CartContext);
+    const [formState, inputHandler, inputFocus, inputBlur, clearInputs] = useForm(initialState)
+    const { state } = useLocation();
+    const navigate = useNavigate();
+    let query = useQuery();
 
-  const onChange = (event)=>{
-    const { name, value} = event.target
-    inputHandler({name,value})
-  }
+    useEffect(() => {
+        const cartId = query.get("cartId") 
+        
+        if(query.get("cartId")) {
+            const getCart = async () => {
+                const cart = await firebaseServices.getCartById(cartId)
+                return cart
+            }
+            getCart()
+                .then((cart) => {
+                    setCart(cart.items)
+                })
+                .catch((error) => {
+                    console.log({error})
+                })
+        }
 
-  const onFocus = ({name}) => {
-    inputFocus({name})
-  }
-
-  const onBlur = ({name}) => {
-    inputBlur({name})
-  }
+    }, [query, setCart])
 
 
-  const onSubmit = (event)=>{
+    const onChange = (event) => {
+        const { name, value } = event.target;
+        inputHandler({ name, value })
+    }
+
+    const onFocus = ({ name }) => {
+        inputFocus({ name })
+    }
+
+    const onBlur = ({ name }) => {
+        inputBlur({ name })
+    }
+
+
+  const onHandlerOrder = async () => {
+    const newOrder = {
+        buyer: {
+            name: formState.name.value,
+            surname: formState.surname.value,
+            document: formState.document.value,
+            email: formState.email.value,
+            phone: formState.phone.value,
+            address: formState.address.value,
+            postalCode: formState.postalCode.value,
+        },
+        createdAt: new Date(),
+        items: cart,
+        payment: {
+            currency: 'USD',
+            method: 'CASH',
+            type: 'CASH'
+        },
+        seller: {
+            id: 1,
+            name: 'Pedrito',
+            phone: '123456789',
+            email: 'pedrito@taskmanager.com'
+        },
+        shipping: {
+            deliverDate: new Date() + 7,
+            trackingNumber: '123456ff227aa89',
+            type: 'DELIVERY'
+        },
+        total: total
+    }
+
+    const orderId = await firebaseServices.createOrder(newOrder)
+    await firebaseServices.updateCart(state.cartId)
+
+    return {
+        orderId,
+    }
+}
+
+  const onSubmit = async(event)=>{
     event.preventDefault()
-    console.log('formState',formState)
-    // clearInputs({formState})
+    onHandlerOrder()
+        const { orderId } = await  onHandlerOrder();
+        clearInputs({ formState })
+        navigate('/success-order', { state: { orderId: orderId.id } })
   }
 
   return(
