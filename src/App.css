@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 body{
-  background: rgb(3,2,5);
-background: linear-gradient(45deg, rgba(3,2,5,1) 0%, rgba(28,12,84,1) 55%, rgba(56,10,152,1) 81%, rgba(35,8,108,1) 100%);
+  background: #021024;
+background: linear-gradient(45deg, #030205 0%, #052659 35%,#11448f 50%, #052659 75%, #000000 95%);
   color: var(--color-text-1);
   background-attachment: fixed;
 }
@@ -17,7 +17,7 @@ a{
   color: var(--color-text-1);
 }
 
-:root{
+/* :root{
   --color-bg:#0b011f;
   --color-bg-2:#160c43;
   --color-bg-3:#2c057a;
@@ -25,13 +25,13 @@ a{
   --color-bg-5:#4416c1;
   --color-text-2:#a28fff;
   --color-text-1:#ded6ff;
-}
-/* :root{
-  --color-bg:#fae6e6;
-  --color-bg-2:#fff1f1;
-  --color-bg-3:#dbdbdb;
-  --color-bg-4:#f3f3f3;
-  --color-bg-5:#c6c6c6;
-  --color-text-2:#030202;
-  --color-text-1:#0d0a1a;
 } */
+:root{
+  --color-bg:#021024;
+  --color-bg-2:#052659;
+  --color-bg-3:#043a71;
+  --color-bg-4:#5485c0;
+  --color-bg-5:#c1e8ff;
+  --color-text-2:#007aa6;
+  --color-text-1:#d0eeff;
+}

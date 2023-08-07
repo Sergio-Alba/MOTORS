@@ -1,20 +1,23 @@
 /* ? ESTILOS DEL CARRRITO DE COMPRAS */
 .cart-container{
   width: 100%;
+  min-height: 81vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background: url(../../assets/images/moto5.1.jpg) no-repeat center bottom 1rem  fixed ;
+  background-origin: content-box;
+
 }
 .cart-header{
   height: 3rem;
   padding: .2rem 1rem;
   margin: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
 }
 
 .cart-content{
-  background-color: #00000036;
+  background-color: #000000ec;
   backdrop-filter: blur(5px);
   margin: 1.5rem;
   min-height: 20rem;
@@ -31,155 +34,4 @@
 }
 .cart-content h3{
   font-size: 2rem;
-}
-.cart-item{
-  width: 80% ;
-  height: 30rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 1.5rem 0;
-  box-shadow: 0 0 1px 1px rgb(217, 207, 216);
-}
-.image-cart-container{
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cart-image{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.cart-content-container{
-  width: 100%;
-  padding: .5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.cart-product-name{
-  padding-top: 1rem;
-  font-weight: 800;
-  font-size: 1.5rem;
-}
-.cart-product-description{
-  display: none;
-}
-.cart-stock{
-  padding:.3rem 0 0 0;
-  font-size: 1rem;
-}
-.cart-quantity{
-  padding:.3rem 0;
-  font-size: 1rem;
-}
-.cart-price{
-  padding:.1rem 0;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-.cart-action{
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.cart-btn{
-  font-weight: 800;
-  border: none;
-}
-.cart-btn:hover{
-  background-color: #664cdc;
-  scale: 1.1 1.1 ;
-}
-.cart-btn:active{
-  background-color: #fff;
-}
-.cart-btn-add{
-  font-size: .8rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #c4c4c4;
-}
-.cart-input{
-  width: 2rem;
-  padding: .3rem;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 800;
-  background-color: #fff;
-  color: #000;
-}
-.cart-btn-decrease{
-  font-size: .8rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #adadad;
-}
-.cart-btn-remove{
-  width: 60%;
-  height: 2rem;
-  border: none;
-  background: none;
-  
-}
-.cart-btn-remove i{
-  width: 3rem;
-  height: 2.5rem;
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #fff;
-}
-.cart-btn-remove i:hover{
-  scale: 1.1 1.1;
-}
-.cart-btn-remove i:active{
-  background-color: #664cdc;
-  color: #160c43;
-}
-.cart-footer{
-  background-color: #160c43;
-  height: 12rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 0 2rem;
-}
-.cart-total{
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-.cart-checkout{
-  margin:0 auto;
-  width: 9rem;
-  height: 3rem;
-  font-size: 1.3rem;
-  font-weight: 800;
-  background-color: #150c3d;
-  color: #fff;
-  border:1px solid #fff;
-}
-.cart-checkout:hover{
-  font-size: 1.2rem;
-  background-color: #664cdc;
-  color: #fff;
-  border:1px solid #fff;
-}
-.cart-checkout i{
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-.cart-checkout:active{
-  background-color: #fff;
-  color: #000;
-  border:1px solid #000 ;
 }

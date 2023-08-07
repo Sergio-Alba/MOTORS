@@ -1,9 +1,9 @@
 
 .header{
-    background-color:var(--color-bg-2);
+    background-color:var(--color-bg);
     position: sticky;
     top: 0;
-    height:5rem;
+    height:5.5rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -65,13 +65,13 @@
     transition: max-height .5s ease-out;
     z-index: 5;
 }
-.menu a{
+.menu li{
     display: block;
     padding: 25px;
     color: var(--color-text-1);
     transition: all .4s ease-in-out;
 }
-.menu a:hover{
+.menu li:hover{
     background-color: var(--color-bg-4);
 }
 
@@ -99,18 +99,20 @@
         position: relative;
         top:0;
         max-height: none;
-        background-color: var(--color-bg-2);
+        background-color: var(--color-bg);
     }
     .menu{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
-    .menu a{
+    .menu li{
+        width: 10rem;
         padding: 15px;
         color: var(--color-text-1);
+        text-align: center;
     }
-    .menu a:hover{
+    .menu li:hover{
         background-color: var(--color-bg-3);
     }
 }

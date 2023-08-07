@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+
 import Input from '../../conponentes/search-fav-card/search/search';
 import './style.css';
 import { useForm } from '../../hooks/useForm';
@@ -8,6 +9,8 @@ import { CartContext } from '../../conponentes/context/cart-context';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { firebaseServices } from '../../services/firebase';
 import { useQuery } from '../../hooks/useQuery';
+import CartItem from '../../conponentes/cart/item';
+import Total from '../../conponentes/cart/total/indes';
 
 
 const initialState = {
@@ -47,7 +50,6 @@ function Checkout  (){
 
     }, [query, setCart])
 
-
     const onChange = (event) => {
         const { name, value } = event.target;
         inputHandler({ name, value })
@@ -60,7 +62,6 @@ function Checkout  (){
     const onBlur = ({ name }) => {
         inputBlur({ name })
     }
-
 
   const onHandlerOrder = async () => {
     const newOrder = {
@@ -113,6 +114,19 @@ function Checkout  (){
   return(
     <div className="checkout-container">
       <h1 className='checkout-title'>Checkout</h1>
+      {
+        cart?.length > 0 ? (
+        <div className="checkout-cart-container">
+          {
+            cart.map((product)=>(
+              <CartItem key={product.id}{...product}onAddToCart={onAddToCart} onDecreaseItem={onDecreaseItem} onRemoveItem={onRemoveItem}/>
+            ))
+          }
+          <Total     total={total} totalItemQuantity={getTotalItemQuantity()}/>
+        </div>
+        ) : (null)
+      }
+      
       <form onSubmit={onSubmit} className='checkout-form'>
         <section className="checkout-form-contain">
           <div className="checkout-form-input">
@@ -128,6 +142,7 @@ function Checkout  (){
             active={formState.name.active}
             error={formState.name.error}
             hasError={formState.name.hasError}
+            
           />
           </div>
           <div className="checkout-form-input">

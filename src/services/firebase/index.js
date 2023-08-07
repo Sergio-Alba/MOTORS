@@ -37,7 +37,6 @@ export const firebaseServices = {
 
             await updateDoc(docRef, data);
         } catch (error) {
-            console.error(error)
             return { error }
         }
     },

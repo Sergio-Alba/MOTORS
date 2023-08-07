@@ -21,7 +21,7 @@
     height: 50%; 
     width: 100%;
     padding: .2rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 .search input{
@@ -34,4 +34,12 @@
     color: #fff;
     background: #00000046;
     backdrop-filter: blur(5px);
+}
+
+
+@media  screen and (min-width:1200px) {
+    .search{
+        width: 90%;
+        margin: 0;
+    }
 }

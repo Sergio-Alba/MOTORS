@@ -6,7 +6,7 @@ import {Link, NavLink} from 'react-router-dom';
 import { CartContext } from '../context/cart-context';
 
 
-const Header = ({ logo , menuItem})=>{
+const Header = ({ logo })=>{
     return(
         <header className="header">
             <NavLink to={'/'}  className="logo">{logo}</NavLink>
@@ -18,10 +18,10 @@ const Header = ({ logo , menuItem})=>{
             </label>
             <nav className="nav">
                 <ul className="menu">
-                    <li> <Link  to="/">Inicio</Link> </li>
-                    <li><Link  to="/products/">Productos</Link></li>
-                    <li><Link  to="/about">Sobre Nosotros</Link></li>
-                    <li><Link  to="/contact">Contacto</Link></li>
+                    <Link  to="/"><li>Inicio</li></Link> 
+                    <Link  to="/products/"><li>Productos</li></Link>
+                    <Link  to="/about"><li>Sobre Nosotros</li></Link>
+                    <Link  to="/contact"><li>Contacto</li></Link>
                 </ul>
             </nav>
         </header>

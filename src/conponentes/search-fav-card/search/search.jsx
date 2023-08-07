@@ -5,7 +5,7 @@ import React from "react";
 import './style.css';
 
 const Input = ({id,
-                type = Text,
+                type = 'text',
                 placeholder,
                 required,
                 name,

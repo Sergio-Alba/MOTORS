@@ -4,11 +4,13 @@ import { useFech } from '../../hooks/useFech';
 import { API_URLS } from '../../constants';
 import Details from '../../conponentes/details'
 import Loader from '../../conponentes/loader';
+import { useContext } from 'react';
+import { CartContext } from '../../conponentes/context/cart-context';
 
 function  ProductDetail(){
   const {productId} = useParams();
   const navigate = useNavigate();
-
+  const {onAddToCart}= useContext(CartContext)
   const urlProductDetail = `${API_URLS.PRODUCTS.url}/${productId}`;
   const history = window.history;
 
@@ -24,7 +26,7 @@ function  ProductDetail(){
       </div>
       {loading && <Loader/>}
       {error && <h2>Error de carga</h2> }
-      <Details {...data} />
+      <Details {...data } onAddToCart={onAddToCart}/>
     </>
   )
 }

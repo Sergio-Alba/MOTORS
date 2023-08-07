@@ -1,0 +1,8 @@
+.cart-action-fav{
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  align-items: center;
+  justify-content: end;
+  padding: 1rem;
+}

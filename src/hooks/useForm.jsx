@@ -14,8 +14,8 @@ const INPUT_ACTIONS = {
 const formReducer = (state, action) => {
     switch (action.type) {
         case INPUT_ACTIONS.INPUT_CHANGE:{
-          const {name, value, error, hasError, isFormValid, active} = action.data;
-          return {
+            const {name, value, error, hasError, isFormValid, active} = action.data;
+        return {
             ...state,
             [name]: {
                 value,
@@ -24,7 +24,7 @@ const formReducer = (state, action) => {
                 active,
             },
             isFormValid,
-          };
+        };
         }
         case INPUT_ACTIONS.INPUT_FOCUS:
             return {
@@ -108,4 +108,4 @@ export const useForm = (initialState) => {
     }
 
     return [formState, inputHandler, inputFocus, inputBlur, clearInputs]
-};
+}; 

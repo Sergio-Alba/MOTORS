@@ -1,17 +1,20 @@
 .container-card{
     margin: 2rem 1rem;
-    background-color: var(--color-bg-4);
+    background-color: #00000078;
+    backdrop-filter: blur(5rem);
     width:22rem;
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* box-shadow: 0 0 1px 2px #000; */
+    border: 1px solid #000000a8;
     justify-content: space-around;
 }
 .container-card:hover{
-    transform: scale(1.03) ;
-    border: solid 1px var(--color-text-2);
-    box-shadow: 0 0 .5rem  ;
+    transform: scale(1.02) ;
+    border: solid 1px var(--color-bg);
+    /* box-shadow: 0 0 1px 1px #000; */
 
 }
 .card{
@@ -23,28 +26,38 @@
 }
 .card-image{
     width: 80%;
-    height: 10rem;
+    height: 40%;
     object-fit: cover;
 }
 .card-contend{
-    width: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .card-name{
-    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-size: 1.7rem;
 }
 .card-category{
-    margin: .5rem;
+    font-size: 1.2rem;
+    padding:0 0 1rem 0;
 }
 .card-description{
-    font-size: .8rem;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 100;
 }
 .card-price{
-    padding:.5rem;
-    color: var(--color-text-2);
+    padding:1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-1);
 
 }
 .card-stock{
-    font-size: .8rem;
+    font-size: 1rem;
+    padding: 1rem;
 }
 .card-contain-btn{
     width: 100%;
@@ -53,19 +66,26 @@
 }
 
 .card-btn{
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border:none;
     font-size: 2rem;
     background: none;
     color: #fff;
+    text-align: center;
 }
 .btn-fav:checked{
     color: black;
     background-color: #fff;
 }
 .card-btn:hover{
-    background-color: var(--color-text-2);
+    background-color: var(--color-bg);
+    border-radius: .4rem;
+    border: 1px solid var(--color-text-1);
 }
-
+.card-btn:active{
+    background-color: var(--color-bg-4);
+    border-radius: .4rem;
+    border: 1px solid var(--color-text-1);
+}
 
