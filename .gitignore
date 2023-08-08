@@ -24,8 +24,8 @@ dist-ssr
 *.sw?
 
 #_env_files 
-.env.production.local
-.env.development
+.env.production
+.env.local
 
 
 #firebase_files
